@@ -1,0 +1,86 @@
+<openerp>
+    <data>
+        <template id="index">
+            <t t-call="website.layout">
+                <div id="wrap">
+                    <div class="oe_structure">
+                        <section>
+                            <div class="container">
+                                <div class="row">
+                                    <style type="text/css" class="init">
+
+                                    </style>
+                                            <!--<div class="col-md-2">-->
+                                                <!--<div class="productbox">-->
+                                                    <!--<img class="img-responsive" t-attf-src="/website/image/product.product/{{product.product_variant_ids[0].id}}/image/460x250" t-att-alt="product.image"/>-->
+                                                    <!--<div class="producttitle"><t t-esc="product.name"/></div>-->
+                                                    <!--<p class="text-justify"><t t-esc="product.product_tmpl_id.description_sale"/></p>-->
+                                                    <!--<div class="productprice"><div class="pull-right"><a href="/shop/product/" class="btn btn-primary btm-sm" role="button">Add to-->
+                                                        <!--<span class="fa fa-shopping-cart"/></a></div><div class="pricetext"><t t-esc="product.product_tmpl_id.list_price"/>Bs</div></div>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+
+                                            <div class="container">
+                                                <div class="well well-sm">
+                                                    <div class="btn-group">
+                                                        <a href="#" id="list" class="btn btn-default btn-sm"><span class="fa fa-bars">
+                                                        </span></a> <a href="#" id="grid" class="btn btn-default btn-sm"><span class="fa fa-th-large"/></a>
+                                                    </div>
+                                                </div>
+                                                <div id="products" class="row list-group">
+                                                    <t t-foreach="products_clearance" t-as="product">
+                                                        <t t-if="product.public_categ_ids.name == 'Liquidacion'">
+
+                                                        <div class="item  col-xs-4 col-lg-4">
+                                                            <div class="thumbnail">
+                                                                <img class="img-responsive" t-attf-src="/website/image/product.product/{{product.product_variant_ids[0].id}}/image/460x250" t-att-alt="product.image"/>
+                                                                <div class="caption">
+                                                                    <h4 class="group inner list-group-item-heading">
+                                                                        <t t-esc="product.name"/></h4>
+                                                                    <p class="group inner list-group-item-text">
+                                                                        <t t-esc="product.product_tmpl_id.description_sale"/>.</p>
+                                                                    <div class="row">
+                                                                        <div class="col-xs-12 col-md-6">
+                                                                            <p class="lead">
+                                                                                <t t-esc="product.product_tmpl_id.list_price"/>Bs</p>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-md-6">
+                                                                            <div class="pull-right">
+                                                                                <a href="/shop/product/" class="btn btn-primary btm-sm" role="button">
+                                                                                    <span class="fa fa-shopping-cart"/>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        </t>
+                                                    </t>
+                                                </div>
+                                            </div>
+                                            <!--<t t-esc="product.id"/>-->
+                                            <!--<t t-esc="product.product_brand_id.name"/>-->
+                                            <!--<t t-esc="product.public_categ_ids.name"/>-->
+                                            <!--<t t-esc="product.product_tmpl_id.default_code"/>-->
+                                            <!--<t t-esc="product.image"/>-->
+                                            <!--<t t-esc="product.product_tmpl_id.categ_id.name"/>-->
+                                            <!--<img t-if="product.image" t-att-src="'data:image/png;base64,'+product.image"/>-->
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="oe_structure"/>
+                </div>
+            </t>
+        </template>
+        <template id="assets_thanos_productos_liquidacion" name="thanos_productos_liquidacion assets"
+                  inherit_id="website_sale.header">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/thanos_productos_liquidacion/static/src/js/js_product_sale.js"/>
+
+                <link rel="stylesheet" href="/thanos_productos_liquidacion/static/src/css/style_product_sale.css"/>
+            </xpath>
+        </template>
+    </data>
+</openerp>
